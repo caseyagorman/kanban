@@ -2,17 +2,13 @@ import React from "react";
 import { DragSource } from "react-dnd";
 const boxSource = {
   beginDrag(props) {
-    console.log("begin drag", props);
     return {
       name: props.id
     };
   },
 
   endDrag(props, monitor) {
-    const item = monitor.getItem();
     const dropResult = monitor.getDropResult();
-    console.log("monitor", monitor);
-    console.log("DROP RESULT", dropResult);
     if (dropResult) {
       props.onDrop(monitor.getItem().name, dropResult.name);
     }

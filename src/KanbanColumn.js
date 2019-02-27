@@ -3,7 +3,6 @@ import { DropTarget } from "react-dnd";
 
 const boxTarget = {
   drop(props) {
-    console.log("box target drop fired");
     return { name: props.status };
   }
 };

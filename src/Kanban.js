@@ -1,5 +1,5 @@
 import React from "react";
-import { DragDropContext, DropTarget, DragSource } from "react-dnd";
+import { DragDropContext } from "react-dnd";
 import HTML5Backend from "react-dnd-html5-backend";
 import KanbanColumn from "./KanbanColumn";
 import KanbanItem from "./KanbanItem";
@@ -36,7 +36,6 @@ class Kanban extends React.Component {
   }
 
   update = (id, status) => {
-    console.log("updating");
     const { tasks } = this.state;
     const task = tasks.find(task => task.id === id);
     task.status = status;
